@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: oas-generator
+  jpa:
+    hibernate:
+      ddl-auto: none
+  freemarker:
+    template-loader-path: classpath:/templates
+    suffix: .ftl
+
+server:
+  port: 8080
+
+generator:
+  oas-path: classpath:oas/api.yaml
+  output-dir: ./generated-output
+  default-group-id: com.barclays
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: always
+
+logging:
+  level:
+    com.barclays: DEBUG
+    org.springframework: INFO
