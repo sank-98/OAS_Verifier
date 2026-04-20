@@ -17,7 +17,7 @@ class TypeMapperTest {
     private final TypeMapper typeMapper = new TypeMapper();
 
     @Test
-    void shouldMapStringFormats() {
+    void shouldMapStringFormatsToJavaTypes() {
         assertEquals("LocalDateTime", typeMapper.mapOasTypeToJavaType(new DateTimeSchema()));
         assertEquals("LocalDate", typeMapper.mapOasTypeToJavaType(new DateSchema()));
 
@@ -39,7 +39,7 @@ class TypeMapperTest {
     }
 
     @Test
-    void shouldMapNumericAndBooleanTypes() {
+    void shouldMapNumericAndBooleanTypesToJavaTypes() {
         IntegerSchema int32Schema = new IntegerSchema();
         int32Schema.setFormat("int32");
         assertEquals("Integer", typeMapper.mapOasTypeToJavaType(int32Schema));
@@ -60,7 +60,7 @@ class TypeMapperTest {
     }
 
     @Test
-    void shouldMapCollectionAndObjectTypes() {
+    void shouldMapCollectionAndObjectTypesToJavaTypes() {
         assertEquals("List", typeMapper.mapOasTypeToJavaType(new ArraySchema()));
         assertEquals("Map", typeMapper.mapOasTypeToJavaType(new ObjectSchema()));
     }
