@@ -9,8 +9,8 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class ApiRequestBody {
-    private String schemaRef;
-    private boolean required;
+public class ApiResponse {
     private String description;
+    private String contentType;
+    private String schemaRef;
 }
