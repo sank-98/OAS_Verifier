@@ -297,3 +297,4 @@ public class OasParserServiceImpl implements OasParserService {
         }
         return typeMapper.mapOasTypeToJavaType(schema);
     }
+}
